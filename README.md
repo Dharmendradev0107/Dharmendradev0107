@@ -18,12 +18,16 @@
 <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
 <a href="#-featured-projects">Projects</a> •
 <a href="#-pipeline--infrastructure">Pipeline</a> •
+<a href="#%EF%B8%8F-devops-landing-zone">Landing Zone</a> •
 <a href="#-github-stats">Stats</a> •
+<a href="#-live-activity">Activity</a> •
 <a href="#-connect-with-me">Connect</a>
 
 </div>
 
 <br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
 
 ## ⚡ About
 
@@ -44,6 +48,8 @@ fun_fact: "I'd rather script it once than click it twice."
 - 📫 **dkmom00@gmail.com**&nbsp; · &nbsp;💬 Ask me about CI/CD, Docker, Terraform, or Linux server ops
 
 <br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
 
 ## 🛠️ Tech Stack
 
@@ -80,6 +86,8 @@ fun_fact: "I'd rather script it once than click it twice."
 </div>
 
 <br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
 
 ## 🚀 Featured Projects
 
@@ -124,7 +132,13 @@ Real-time weather app with uptime/response monitoring on an external API.
 
 <br>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
+
 ## 🎬 Pipeline & Infrastructure
+
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=15&duration=2200&pause=1200&color=FFC200&center=true&vCenter=true&width=560&lines=%24+git+push+origin+main;%E2%9C%94+github-actions%3A+build+%E2%86%92+test+%E2%86%92+dockerize;%E2%9C%94+terraform+apply+--auto-approve;%E2%9C%94+deployed+to+production+in+2m+40s" alt="deploy terminal" />
+</div>
 
 **How a commit reaches production:**
 
@@ -178,6 +192,69 @@ graph TB
 
 <br>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
+
+## 🏗️ DevOps Landing Zone
+
+<p align="center"><em>A production-style Azure landing zone — hub-spoke network, layered security, and a pipeline that ships straight into it.</em></p>
+
+```mermaid
+graph TB
+    U(("🌍 Users")) --> FD["🚪 Azure Front Door<br/>+ WAF"]
+    FD --> HUB
+
+    subgraph HUB [" 🔒 Hub VNet — Connectivity & Security "]
+        direction LR
+        FW["🛡️ Firewall"]
+        BAS["🔑 Bastion"]
+        VPN["🌐 VPN Gateway"]
+    end
+
+    HUB -->|peered| SPOKE
+
+    subgraph SPOKE [" 📦 Spoke VNet — Workload "]
+        direction TB
+        subgraph APPSUB [" App Subnet "]
+            VM["🖥️ Linux VM<br/>Nginx + Docker"]
+        end
+        subgraph DATASUB [" Data Subnet "]
+            DB["💾 Storage / DB"]
+        end
+        APPSUB --> DATASUB
+    end
+
+    SPOKE --> MON["📊 Azure Monitor<br/>+ Log Analytics"]
+    CICD["⚙️ GitHub Actions<br/>CI/CD Pipeline"] -.->|terraform apply<br/>+ deploy| SPOKE
+    MON -.->|alerts| CICD
+
+    style U fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style FD fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style HUB fill:#0D1117,stroke:#FFC200,color:#FFC200
+    style FW fill:#161B22,stroke:#FFC200,color:#ffffff
+    style BAS fill:#161B22,stroke:#FFC200,color:#ffffff
+    style VPN fill:#161B22,stroke:#FFC200,color:#ffffff
+    style SPOKE fill:#0D1117,stroke:#FFC200,color:#FFC200
+    style APPSUB fill:#161B22,stroke:#FFC200,color:#FFC200
+    style DATASUB fill:#161B22,stroke:#FFC200,color:#FFC200
+    style VM fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style DB fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style MON fill:#FFC200,stroke:#FFC200,color:#0D1117
+    style CICD fill:#FFC200,stroke:#FFC200,color:#0D1117
+```
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/NETWORK-HUB--SPOKE-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/SECURITY-FIREWALL%20%2B%20WAF-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/ACCESS-BASTION%20ONLY-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/IaC-100%25%20TERRAFORM-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+
+</div>
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
+
 ## 📊 GitHub Stats
 
 <div align="center">
@@ -197,6 +274,22 @@ graph TB
 
 <br>
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
+
+## 📈 Live Activity
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/dharmendra0107/dharmendra0107/output/github-contribution-grid-snake.svg" alt="Contribution snake animation" width="100%" />
+
+<sub>Animated snake eating my daily commits — auto-updates every day via a GitHub Actions workflow. See setup note below.</sub>
+
+</div>
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:FFC200,100:0D1117&height=3&width=100%" width="100%"/>
+
 ## 🌐 Connect With Me
 
 <div align="center">
@@ -213,3 +306,11 @@ graph TB
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:FFC200,100:0D1117&height=120&section=footer" width="100%"/>
+
+<details>
+<summary><b>⚙️ One-time setup: enable the contribution snake animation</b></summary>
+<br>
+
+The snake animation in <b>Live Activity</b> needs a tiny GitHub Actions workflow to generate it daily from your contribution graph. Add the included <code>snake.yml</code> file to <code>.github/workflows/snake.yml</code> in this repo, then push — it creates an <code>output</code> branch and regenerates the SVG every day automatically. No further maintenance needed.
+
+</details>
