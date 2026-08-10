@@ -17,6 +17,7 @@
 <a href="#-about">About</a> •
 <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
 <a href="#-featured-projects">Projects</a> •
+<a href="#-pipeline--infrastructure">Pipeline</a> •
 <a href="#-github-stats">Stats</a> •
 <a href="#-connect-with-me">Connect</a>
 
@@ -120,6 +121,60 @@ Real-time weather app with uptime/response monitoring on an external API.
 </td>
 </tr>
 </table>
+
+<br>
+
+## 🎬 Pipeline & Infrastructure
+
+**How a commit reaches production:**
+
+```mermaid
+graph LR
+    A[📝 Code<br/>git push] --> B[🔨 Build<br/>GitHub Actions]
+    B --> C[🧪 Test<br/>pytest]
+    C --> D[🐳 Docker<br/>docker build]
+    D --> E[🚀 Deploy<br/>Azure + Nginx]
+    E --> F[✅ Live<br/>Production]
+
+    style A fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style B fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style C fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style D fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style E fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style F fill:#FFC200,stroke:#FFC200,color:#0D1117
+```
+
+**Terraform-provisioned Azure infrastructure:**
+
+```mermaid
+graph TB
+    TF["📄 main.tf<br/>Terraform config"] -->|terraform apply| RG
+
+    subgraph RG [" Azure Resource Group "]
+        direction LR
+        subgraph VNET [" Virtual Network "]
+            VM["🖥️ Linux VM<br/>Nginx + Docker"]
+        end
+        ST["💾 Storage Account<br/>App assets"]
+    end
+
+    style TF fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style RG fill:#0D1117,stroke:#FFC200,color:#FFC200
+    style VNET fill:#161B22,stroke:#FFC200,color:#FFC200
+    style VM fill:#0D1117,stroke:#FFC200,color:#ffffff
+    style ST fill:#0D1117,stroke:#FFC200,color:#ffffff
+```
+
+**Production dashboard — at a glance:**
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/UPTIME-99.98%25-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/AVG%20DEPLOY-2m%2040s-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/CONTAINERS-6%20RUNNING-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+<img src="https://img.shields.io/badge/STATUS-HEALTHY-0D1117?style=for-the-badge&labelColor=FFC200&color=0D1117" />
+
+</div>
 
 <br>
 
